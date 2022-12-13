@@ -1,0 +1,86 @@
+:root
+{
+  --select-item-padding: 7px 12px;
+  --select-item-padding-vertical: 7px;
+  --select-item-padding-horizontal: 12px;
+}
+
+.app-select-input
+{
+  width: 300px;
+
+  &__button
+  {
+    padding: var(--select-item-padding);
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    border: 1px solid #CCC;
+    background: none;
+
+    &--active
+    {
+      border-color: #555;
+    }
+  }
+
+  &__selected-item-text
+  {
+    margin-right: var(--select-item-padding-horizontal);
+    flex-grow: 1;
+    // border: 1px dashed red;
+    text-align: left;
+    overflow: hidden;
+  }
+
+  &__select-icon // icon is nested inside button
+  {
+    margin-left: auto;
+  }
+
+  &__select-input-list
+  {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -9999;
+    padding: 0;
+    margin: 0;
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid transparent;
+    border-top: none;
+    list-style: none;
+
+    &--active
+    {
+      visibility: visible;
+      position: static;
+      border-color: #555;
+    }
+  }
+
+  &__option-input
+  {
+    padding: 0 var(--select-item-padding-horizontal);
+    padding-top: var(--select-item-padding-vertical);
+    margin: 0;
+    max-width: 100%;
+    overflow: hidden;
+
+    &:last-child
+    {
+      padding-bottom: var(--select-item-padding-vertical);
+    }
+
+    &:hover
+    {
+      --option-input-hover-bg-color: #EDEDED;
+      --option-input-hover-txt-color: #222;
+      background-color: var(--option-input-hover-bg-color);
+      color: var(--option-input-hover-txt-color);
+    }
+  }
+}
